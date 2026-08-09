@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<title>Ислам и Наргиз — 13 ноября 2026</title>
+<meta name="description" content="Приглашение на свадьбу Ислама и Наргиз. 13 ноября 2026 года, Житикара.">
+<meta property="og:title" content="Ислам и Наргиз — 13.11.2026">
+<meta property="og:description" content="Будем рады видеть вас в этот день.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oranienbaum&family=Manrope:wght@300;400;500;600&display=swap"
+  rel="stylesheet">
+<style>
+  :root{
+    --bordo:#39000C;
+    --ink:#241811;
+    --ink-2:#4F4030;
+    --paper:#FFFDF8;
+  }
+
+  *,*::before,*::after{ box-sizing:border-box; }
+
+  html,body{
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    background:var(--paper);
+  }
+
+  body{
+    font-family:"Manrope","Segoe UI",system-ui,sans-serif;
+    font-weight:300;
+    color:var(--ink);
+  }
+
+  .card{
+    position:fixed;
+    inset:0;
+    height:100dvh;
+    height:100vh;
+    overflow:hidden;
+  }
+
+  .card__bg{
+    position:absolute;
+    inset:0;
+    background:url("back.jpeg") center/cover no-repeat;
+  }
+
+  .card__overlay{
+    position:absolute;
+    inset:0;
+    /* едва заметная белая подсветка по центру — помогает панели не спорить с фото,
+       без затемнения и без цветного оттенка */
+    background:radial-gradient(60% 55% at 50% 50%, rgba(255,255,255,.35) 0%, rgba(255,255,255,0) 72%);
+  }
+
+  .card__content{
+    position:relative;
+    z-index:2;
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:calc(env(safe-area-inset-top,0px) + 1.2rem) 1.1rem calc(env(safe-area-inset-bottom,0px) + 1.2rem);
+  }
+
+  /* тканевая подложка под текст — гарантирует читаемость поверх фото
+     без затемнения и без цветного фильтра, просто лёгкое "стекло" */
+  .panel{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:clamp(.8rem, 2.6vh, 1.3rem);
+    text-align:center;
+    width:min(360px, 100%);
+    padding:clamp(1.5rem, 6vh, 2.3rem) clamp(1.3rem, 6vw, 1.9rem);
+    background:rgba(255,255,255,.68);
+    border:1px solid rgba(255,255,255,.85);
+    border-radius:20px;
+    backdrop-filter:blur(10px) saturate(115%);
+    -webkit-backdrop-filter:blur(10px) saturate(115%);
+    box-shadow:0 18px 46px rgba(46,33,25,.14), 0 2px 10px rgba(46,33,25,.08);
+  }
+
+  .eyebrow{
+    margin:0;
+    font-family:"Oranienbaum",serif;
+    font-size:clamp(.72rem, 2.6vw, .9rem);
+    letter-spacing:.32em;
+    text-transform:uppercase;
+    color:var(--ink-2);
+  }
+
+  .names{
+    margin:0;
+    font-family:"Oranienbaum",serif;
+    font-size:clamp(1.9rem, 8vw, 2.8rem);
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    line-height:1.2;
+    color:var(--ink);
+  }
+
+  .names .amp{
+    font-size:.82em;
+    padding:0 .2em;
+    color:var(--bordo);
+  }
+
+  .tagline{
+    margin:0;
+    max-width:24em;
+    font-family:"Oranienbaum",serif;
+    font-size:clamp(.95rem, 3.4vw, 1.15rem);
+    letter-spacing:.02em;
+    line-height:1.45;
+    color:var(--ink-2);
+  }
+
+  .divider{
+    width:52px;
+    height:1px;
+    background:rgba(36,24,17,.28);
+  }
+
+  .text{
+    margin:0;
+    max-width:28em;
+    font-size:clamp(.84rem, 2.8vw, .96rem);
+    line-height:1.65;
+    color:var(--ink-2);
+  }
+
+  .meta{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:clamp(.6rem, 2vh, .95rem);
+    margin-top:clamp(.1rem, .8vh, .3rem);
+    padding-top:clamp(.8rem, 2.6vh, 1.1rem);
+    border-top:1px solid rgba(36,24,17,.2);
+    width:min(280px, 92%);
+  }
+
+  .meta__date{
+    display:flex;
+    align-items:baseline;
+    gap:.6em;
+    font-family:"Oranienbaum",serif;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink);
+  }
+
+  .meta__day{ font-size:clamp(1.1rem, 4.2vw, 1.35rem); }
+  .meta__time{
+    font-size:clamp(.9rem, 3.4vw, 1.05rem);
+    color:var(--ink-2);
+  }
+  .meta__time::before{
+    content:"·";
+    margin-right:.6em;
+    color:rgba(36,24,17,.4);
+  }
+
+  .meta__venue{
+    display:flex;
+    flex-direction:column;
+    gap:.25em;
+    font-size:clamp(.8rem, 2.8vw, .9rem);
+    line-height:1.5;
+  }
+
+  .meta__city{ color:var(--ink-2); }
+
+  .meta__addr{
+    color:var(--bordo);
+    text-decoration:none;
+    border-bottom:1px solid rgba(122,34,51,.35);
+  }
+
+  .meta__hall{ color:var(--ink-2); opacity:.85; }
+
+  .music{
+    position:fixed;
+    z-index:5;
+    top:calc(env(safe-area-inset-top,0px) + 14px);
+    right:calc(env(safe-area-inset-right,0px) + 14px);
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    border:1px solid rgba(46,33,25,.22);
+    background:rgba(255,255,255,.55);
+    backdrop-filter:blur(6px);
+    box-shadow:0 2px 14px rgba(46,33,25,.12);
+    display:grid;
+    place-items:center;
+    cursor:pointer;
+    padding:0;
+  }
+
+  .music__btn i{
+    position:relative;
+    display:block;
+    width:12px;
+    height:14px;
+  }
+
+  .music__btn i::before,
+  .music__btn i::after{
+    content:'';
+    position:absolute;
+    top:0;
+    width:4px;
+    height:14px;
+    border-radius:1px;
+    background:var(--ink);
+  }
+
+  .music__btn i::before{ left:0; }
+  .music__btn i::after{ right:0; }
+
+  .music.is-paused .music__btn i{
+    width:0;
+    height:0;
+    border:solid transparent;
+    border-width:7px 0 7px 11px;
+    border-left-color:var(--ink);
+    margin-left:2px;
+  }
+
+  .music.is-paused .music__btn i::before,
+  .music.is-paused .music__btn i::after{ display:none; }
+
+  /* @media (max-height:640px){
+    .panel{ gap:.6rem; padding-block:1.2rem; }
+    .text{ display:none; }
+  } */
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <div class="card__bg"></div>
+  <div class="card__overlay"></div>
+
+  <div class="card__content">
+    <div class="panel">
+      <p class="eyebrow">Приглашение на свадьбу</p>
+      <h1 class="names">Ислам <span class="amp">&amp;</span> Наргиз</h1>
+      <p class="tagline">с радостью приглашают вас разделить с ними этот особенный день</p>
+
+      <div class="divider"></div>
+
+      <p class="text">
+        Дорогие родные и друзья! Один день в этом году будет для нас особенным,
+        и мы хотим провести его в кругу близких. С большим удовольствием приглашаем вас
+        на наш самый главный праздник — нашу свадьбу!
+      </p>
+
+      <div class="meta">
+        <div class="meta__date">
+          <span class="meta__day">13 ноября</span>
+          <span class="meta__time">17:00</span>
+        </div>
+        <div class="meta__venue">
+          <span class="meta__city">г. Житикара</span>
+          <a class="meta__addr" href="https://yandex.kz/profile/225684982540?lang=ru" target="_blank" rel="noopener">
+            микрорайон Кенсай, 2
+          </a>
+          <span class="meta__hall">Ресторан «Жемчужина»</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="music" id="music" type="button" aria-label="Выключить музыку">
+    <span class="music__btn"><i></i></span>
+  </button>
+</div>
+
+<audio id="bgm" src="music.mp3" loop preload="auto" autoplay muted playsinline></audio>
+
+<script>
+/* ══════════════════════════════════════════
+   АВТОЗАПУСК МУЗЫКИ — беззвучный автоплей,
+   затем мягкое включение звука
+   ══════════════════════════════════════════ */
+(function(){
+  const DELAY = 500;
+  const bgm = document.getElementById('bgm');
+  const btn = document.getElementById('music');
+
+  let userPaused = false;
+  let sounding = false;
+
+  const setIcon = on => {
+    btn.classList.toggle('is-paused', !on);
+    btn.setAttribute('aria-label', on ? 'Выключить музыку' : 'Включить музыку');
+  };
+
+  bgm.muted = true;
+  bgm.volume = 0;
+  const kick = () => { const p = bgm.play(); if (p && p.catch) p.catch(() => {}); };
+  kick();
+  bgm.addEventListener('canplay', kick, { once:true });
+
+  function soundOn(){
+    if (userPaused || sounding) return;
+    bgm.muted = false;
+    const p = bgm.play();
+    if (p && p.catch) p.catch(() => {});
+
+    setTimeout(() => {
+      if (bgm.paused || bgm.muted){
+        bgm.muted = true;
+        setIcon(false);
+        armGesture();
+      } else {
+        sounding = true;
+        setIcon(true);
+        fade();
+      }
+    }, 120);
+  }
+
+  function fade(){
+    const step = () => {
+      if (userPaused) return;
+      bgm.volume = Math.min(0.5, +(bgm.volume + 0.025).toFixed(3));
+      if (bgm.volume < 0.5) setTimeout(step, 30);
+    };
+    step();
+  }
+
+  let armed = false;
+  function armGesture(){
+    if (armed) return;
+    armed = true;
+    const evs = ['pointerdown','touchstart','touchend','click','keydown'];
+    const go = () => {
+      evs.forEach(ev => document.removeEventListener(ev, go, true));
+      armed = false;
+      soundOn();
+    };
+    evs.forEach(ev => document.addEventListener(ev, go, { capture:true, passive:true }));
+  }
+
+  armGesture();
+  setTimeout(soundOn, DELAY);
+
+  btn.addEventListener('click', () => {
+    if (bgm.paused || bgm.muted){
+      userPaused = false;
+      bgm.muted = false;
+      bgm.volume = 0.5;
+      bgm.play().catch(() => {});
+      sounding = true;
+      setIcon(true);
+    } else {
+      userPaused = true;
+      sounding = false;
+      bgm.pause();
+      setIcon(false);
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

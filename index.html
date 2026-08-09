@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+  <title>Ислам и Наргиз — 13 ноября 2026</title>
+  <meta name="description" content="Приглашение на свадьбу Ислама и Наргиз. 13 ноября 2026 года, Житикара.">
+  <meta property="og:title" content="Ислам и Наргиз — 13.11.2026">
+  <meta property="og:description" content="Будем рады видеть вас в этот день.">
+  <meta property="og:image" content="hero.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oranienbaum&family=Manrope:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    /* ══════════════════════════════════════════
+   ТОКЕНЫ
+   ══════════════════════════════════════════ */
+    :root {
+      --bordo: #39000C;
+      --bordo-2: #2A0008;
+      --cream: #FDEDD3;
+      --ink: #2A1A12;
+      --ink-2: #5A4436;
+      --light: #F7EFE3;
+      --ease: cubic-bezier(.22, .61, .36, 1);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      background: var(--bordo);
+    }
+
+    body {
+      background: var(--bordo);
+      color: var(--light);
+      font-family: "Manrope", "Segoe UI", system-ui, sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img,
+    video {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    ::selection {
+      background: var(--cream);
+      color: var(--bordo);
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--cream);
+      outline-offset: 3px;
+    }
+
+    .deco {
+      font-family: "Oranienbaum", Georgia, serif;
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: .06em;
+    }
+
+    /* ══════════════════════════════════════════
+   1 · ОБЩИЕ БЛОКИ
+   ══════════════════════════════════════════ */
+    .wrap {
+      width: min(560px, 100% - 3rem);
+      margin-inline: auto;
+    }
+
+    .sheet {
+      background: var(--cream);
+      color: var(--ink);
+      padding-block: clamp(4rem, 14vw, 6.5rem);
+      position: relative;
+    }
+
+    /* характерные для шаблона гигантские дуги */
+    .sheet--a {
+      border-top-right-radius: 100% 20%;
+      border-bottom-left-radius: 100% 20%;
+    }
+
+    .sheet--b {
+      border-top-left-radius: 100% 20%;
+      border-bottom-right-radius: 100% 20%;
+    }
+
+    .sheet .deco-h {
+      color: var(--ink);
+    }
+
+    .deco-h {
+      font-family: "Oranienbaum", Georgia, serif;
+      font-size: clamp(2.1rem, 9vw, 2.9rem);
+      letter-spacing: .1em;
+      margin: 0 0 1.8rem;
+      text-transform: uppercase;
+    }
+
+    .sheet--a .deco-h {
+      text-align: left;
+    }
+
+    .sheet--b .deco-h {
+      text-align: right;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity .9s var(--ease), transform .9s var(--ease);
+    }
+
+    .reveal.is-in {
+      opacity: 1;
+      transform: none;
+    }
+
+    .reveal[data-d="1"] {
+      transition-delay: .1s
+    }
+
+    .reveal[data-d="2"] {
+      transition-delay: .2s
+    }
+
+    .reveal[data-d="3"] {
+      transition-delay: .3s
+    }
+
+    /* ══════════════════════════════════════════
+   2 · ГЕРОЙ
+   ══════════════════════════════════════════ */
+    .hero {
+      position: relative;
+      height: 100dvh;
+      min-height: 520px;
+      overflow: hidden;
+      border-bottom-left-radius: 50% 16%;
+      border-bottom-right-radius: 50% 16%;
+    }
+
+    .hero__img {
+      position: absolute;
+      top: -8%;
+      left: 0;
+      width: 100%;
+      height: 116%;
+      object-fit: cover;
+      object-position: center 30%;
+      will-change: transform;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(57, 0, 12, .28) 0%, transparent 35%, rgba(57, 0, 12, .55) 100%);
+    }
+
+    .hero__cap {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: clamp(4rem, 14vh, 7rem);
+      z-index: 2;
+      text-align: center;
+      padding-inline: 1.5rem;
+      color: #FFF8EC;
+      text-shadow: 0 2px 24px rgba(0, 0, 0, .45);
+    }
+
+    .hero__cap .l1 {
+      font-family: "Oranienbaum", serif;
+      font-size: clamp(1.5rem, 7vw, 2.1rem);
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      margin: 0 0 .35em;
+    }
+
+    .hero__cap .l2 {
+      font-family: "Oranienbaum", serif;
+      font-size: clamp(1.5rem, 7vw, 2.1rem);
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    .hero__cap .amp {
+      font-size: .9em;
+      padding: 0 .35em;
+    }
+
+    /* ══════════════════════════════════════════
+   3 · МУЗЫКА + ДАТА + ТЕКСТ
+   ══════════════════════════════════════════ */
+    .intro {
+      padding-block: clamp(3rem, 12vw, 5rem) clamp(4rem, 14vw, 6rem);
+      text-align: center;
+    }
+
+    .music-slot {
+      width: 132px;
+      height: 132px;
+      margin: 0 auto clamp(2.5rem, 9vw, 3.5rem);
+    }
+
+    .music {
+      position: relative;
+      width: 132px;
+      height: 132px;
+      margin: 0;
+      background: none;
+      border: 0;
+      padding: 0;
+      cursor: pointer;
+      color: var(--light);
+      transition: width .3s ease, height .3s ease, top .3s ease, right .3s ease;
+    }
+
+    .music.is-sticky {
+      position: fixed;
+      top: calc(env(safe-area-inset-top, 0px) + 12px);
+      right: calc(env(safe-area-inset-right, 0px) + 12px);
+      width: 56px;
+      height: 56px;
+      z-index: 60;
+    }
+
+    .music__ring {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      animation: spin 26s linear infinite;
+      transition: opacity .25s ease;
+    }
+
+    .music.is-sticky .music__ring {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .music__ring text {
+      font-family: "Manrope", sans-serif;
+      font-size: 8.4px;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      fill: currentColor;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg)
+      }
+    }
+
+    .music__btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--cream);
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--bordo);
+    }
+
+    .music__btn i {
+      position: relative;
+      display: block;
+      width: 14px;
+      height: 16px;
+    }
+
+    .music__btn i::before,
+    .music__btn i::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 4px;
+      height: 16px;
+      border-radius: 1px;
+      background: var(--bordo);
+    }
+
+    .music__btn i::before {
+      left: 0;
+    }
+
+    .music__btn i::after {
+      right: 0;
+    }
+
+    .music.is-paused .music__btn i {
+      width: 0;
+      height: 0;
+      border: solid transparent;
+      border-width: 8px 0 8px 13px;
+      border-left-color: var(--bordo);
+      margin-left: 3px;
+    }
+
+    .music.is-paused .music__btn i::before,
+    .music.is-paused .music__btn i::after {
+      display: none;
+    }
+
+    .music.is-paused .music__ring {
+      animation-play-state: paused;
+    }
+
+    .date-grid {
+      max-width: 340px;
+      margin: 0 auto clamp(2.4rem, 9vw, 3.4rem);
+      font-family: "Oranienbaum", serif;
+      font-size: clamp(2rem, 10vw, 2.9rem);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      line-height: 1.35;
+
+    }
+
+    .intro__text {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: rgba(247, 239, 227, .92);
+    }
+
+    /* календарь */
+    .cal {
+      max-width: 320px;
+      margin: clamp(2.6rem, 9vw, 3.6rem) auto 0;
+      border: 1px solid rgba(253, 237, 211, .28);
+      border-radius: 4px;
+      padding: 1.2rem 1.1rem 1rem;
+    }
+
+    .cal__top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding-bottom: .7rem;
+      margin-bottom: .7rem;
+      border-bottom: 1px solid rgba(253, 237, 211, .22);
+    }
+
+    .cal__m {
+      font-family: "Oranienbaum", serif;
+      font-size: 1.2rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .cal__y {
+      font-size: .62rem;
+      letter-spacing: .3em;
+      color: rgba(253, 237, 211, .6);
+    }
+
+    .cal__grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: .15rem;
+    }
+
+    .cal__dow {
+      font-size: .55rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      text-align: center;
+      padding-bottom: .4rem;
+      color: rgba(253, 237, 211, .45);
+    }
+
+    .cal__d {
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      font-size: .82rem;
+      color: rgba(253, 237, 211, .62);
+      position: relative;
+    }
+
+    .cal__d--off {
+      visibility: hidden;
+    }
+
+    .cal__d--rest {
+      color: rgba(253, 237, 211, .35);
+    }
+
+    .cal__d--w {
+      color: #FFF8EC;
+      font-weight: 500;
+    }
+
+    .cal__ring2 {
+      position: absolute;
+      inset: -10%;
+      width: 120%;
+      height: 120%;
+      overflow: visible;
+      color: var(--cream);
+      transform: rotate(-8deg);
+    }
+
+    .cal__ring2 circle {
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-dasharray: 132;
+      stroke-dashoffset: 132;
+      transition: stroke-dashoffset 1.5s var(--ease) .3s;
+    }
+
+    .cal.is-in .cal__ring2 circle {
+      stroke-dashoffset: 8;
+    }
+
+    /* ══════════════════════════════════════════
+   4 · ЛОКАЦИЯ
+   ══════════════════════════════════════════ */
+    .venue__name {
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin: 0 0 .3rem;
+      color: var(--ink);
+    }
+
+    .venue__addr {
+      margin: 0;
+      color: var(--ink-2);
+    }
+
+    .venue__addr a {
+      color: var(--ink-2);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .venue__photo {
+      width: min(300px, 80%);
+      aspect-ratio: 1/1.08;
+      object-fit: cover;
+      border-radius: 50%;
+      margin: clamp(2rem, 7vw, 3rem) auto 0;
+    }
+
+    /* ══════════════════════════════════════════
+   5 · АНКЕТА
+   ══════════════════════════════════════════ */
+    .form__note {
+      color: var(--ink-2);
+      margin: 0 0 1.1rem;
+    }
+
+    .form__note:last-of-type {
+      margin-bottom: 2.4rem;
+    }
+
+    .fs {
+      border: 0;
+      padding: 0;
+      margin: 0 0 2.2rem;
+    }
+
+    .fs legend,
+    .fld>label {
+      display: block;
+      padding: 0;
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+
+    .fld {
+      margin-bottom: 2.2rem;
+    }
+
+    .opt {
+      display: block;
+      margin-bottom: .35rem;
+      cursor: pointer;
+    }
+
+    .opt input {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .opt span {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      padding: .45rem 0;
+      font-size: 1rem;
+      color: var(--ink-2);
+      transition: color .25s var(--ease);
+    }
+
+    .opt span::before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      flex: 0 0 20px;
+      border: 1.4px solid rgba(90, 68, 54, .5);
+      border-radius: 50%;
+      transition: box-shadow .25s var(--ease), border-color .25s var(--ease);
+    }
+
+    .opt:hover span {
+      color: var(--ink);
+    }
+
+    .opt input:checked+span {
+      color: var(--ink);
+    }
+
+    .opt input:checked+span::before {
+      border-color: var(--bordo);
+      box-shadow: inset 0 0 0 5px var(--bordo);
+    }
+
+    .opt input:focus-visible+span::before {
+      outline: 2px solid var(--bordo);
+      outline-offset: 3px;
+    }
+
+    .inp {
+      width: 100%;
+      border: 0;
+      border-bottom: 1.4px solid rgba(90, 68, 54, .4);
+      background: transparent;
+      font-family: "Manrope", sans-serif;
+      font-size: 1.05rem;
+      color: var(--ink);
+      padding: .6rem 0;
+      transition: border-color .25s var(--ease);
+    }
+
+    .inp::placeholder {
+      color: rgba(90, 68, 54, .45);
+    }
+
+    .inp:focus {
+      outline: none;
+      border-color: var(--bordo);
+    }
+
+    .send {
+      display: block;
+      margin: 2.6rem auto 0;
+      min-width: 220px;
+      padding: 1.05rem 2rem;
+      border: 1.4px solid var(--bordo);
+      border-radius: 999px;
+      background: transparent;
+      font-family: "Manrope", sans-serif;
+      font-size: .78rem;
+      font-weight: 500;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--bordo);
+      cursor: pointer;
+      transition: background .3s var(--ease), color .3s var(--ease);
+    }
+
+    .send:hover {
+      background: var(--bordo);
+      color: var(--cream);
+    }
+
+    .send[disabled] {
+      opacity: .5;
+      cursor: progress;
+    }
+
+    .err {
+      display: none;
+      margin: .5rem 0 0;
+      font-size: .85rem;
+      color: #8E2B22;
+    }
+
+    .err.on {
+      display: block;
+    }
+
+    .hide {
+      display: none !important;
+    }
+
+    .done {
+      text-align: center;
+    }
+
+    .done h3 {
+      font-family: "Oranienbaum", serif;
+      font-weight: 400;
+      font-size: 1.8rem;
+      letter-spacing: .08em;
+      margin: 0 0 .9rem;
+      color: var(--ink);
+    }
+
+    .done p {
+      margin: 0 0 .5rem;
+      color: var(--ink-2);
+    }
+
+    .again {
+      margin-top: 1.4rem;
+      background: none;
+      border: 0;
+      cursor: pointer;
+      font-family: "Manrope", sans-serif;
+      font-size: .7rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--bordo);
+      text-decoration: underline;
+      text-underline-offset: 5px;
+    }
+
+    /* ══════════════════════════════════════════
+   6 · ОТСЧЁТ
+   ══════════════════════════════════════════ */
+    .count {
+      position: relative;
+      overflow: hidden;
+      padding-block: clamp(5rem, 18vw, 8rem);
+      text-align: center;
+    }
+
+    .count__bg {
+      position: absolute;
+      inset: -8% 0;
+      width: 100%;
+      height: 116%;
+      object-fit: cover;
+      object-position: center 35%;
+      filter: sepia(.35) saturate(.7) brightness(.72);
+      will-change: transform;
+    }
+
+    .count::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(30, 10, 6, .35);
+    }
+
+    .count>.wrap {
+      position: relative;
+      z-index: 2;
+    }
+
+    .count h2 {
+      font-family: "Oranienbaum", serif;
+      font-weight: 400;
+      font-size: clamp(1.8rem, 8vw, 2.5rem);
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin: 0 0 2rem;
+      color: #FFF8EC;
+      text-shadow: 0 2px 20px rgba(0, 0, 0, .5);
+    }
+
+    .count__row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: .5rem;
+    }
+
+    .count__row b {
+      display: block;
+      font-family: "Oranienbaum", serif;
+      font-weight: 400;
+      font-size: clamp(2rem, 11vw, 3.2rem);
+      color: #FFF8EC;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+      text-shadow: 0 2px 20px rgba(0, 0, 0, .5);
+    }
+
+    .count__row span {
+      display: block;
+      margin-top: .55rem;
+      font-size: .66rem;
+      letter-spacing: .1em;
+      color: rgba(255, 248, 236, .85);
+    }
+
+    /* ══════════════════════════════════════════
+   7 · ДЕТАЛИ / КОНТАКТЫ / ФИНАЛ
+   ══════════════════════════════════════════ */
+    .plain {
+      padding-block: clamp(4rem, 14vw, 6rem);
+      text-align: center;
+    }
+
+    .plain .deco-h {
+      color: var(--light);
+      text-align: center;
+    }
+
+    .note-n {
+      font-family: "Oranienbaum", serif;
+      font-size: 1.05rem;
+      letter-spacing: .2em;
+      color: rgba(253, 237, 211, .75);
+      margin: 2.2rem 0 .8rem;
+    }
+
+    .plain p {
+      margin: 0;
+      color: rgba(247, 239, 227, .9);
+    }
+
+    .contacts__val {
+      font-family: "Oranienbaum", serif;
+      font-size: 1.35rem;
+      letter-spacing: .1em;
+      margin: 1.4rem 0 .4rem;
+    }
+
+    .contacts__val a {
+      text-decoration: none;
+    }
+
+    .final {
+      text-align: center;
+      padding: clamp(3rem, 12vw, 5rem) 1.5rem clamp(4rem, 14vw, 6rem);
+    }
+
+    .final p {
+      font-family: "Oranienbaum", serif;
+      font-size: clamp(1.7rem, 8vw, 2.4rem);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin: 0;
+      color: #FFF8EC;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+
+      .hero__img,
+      .count__bg {
+        transform: none !important;
+      }
+
+      .music__ring {
+        animation: none;
+      }
+
+      .cal__ring2 circle {
+        stroke-dashoffset: 8;
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- стартует беззвучно (это разрешено автоплеем), звук включается скриптом через 0.5 с -->
+  <audio id="bgm" src="music.mp3" loop preload="auto" autoplay muted playsinline></audio>
+
+  <!-- ══════════ САЙТ ══════════ -->
+  <main id="site">
+
+    <!-- герой -->
+    <header class="hero">
+      <img class="hero__img" id="heroImg" src="hero.webp" alt="Ислам и Наргиз">
+      <div class="hero__cap">
+        <p class="l1">Save the date</p>
+        <p class="l2">Ислам <span class="amp">&amp;</span> Наргиз</p>
+      </div>
+    </header>
+
+    <!-- музыка + дата + обращение -->
+    <section class="intro">
+      <div class="wrap">
+
+        <div class="music-slot">
+          <button class="music" id="music" type="button" aria-label="Выключить музыку">
+            <svg class="music__ring" viewBox="0 0 132 132" aria-hidden="true">
+              <defs>
+                <path id="mcirc" d="M66,66 m-52,0 a52,52 0 1,1 104,0 a52,52 0 1,1 -104,0" />
+              </defs>
+              <text>
+                <textPath href="#mcirc" startOffset="0%">
+                  нажмите, чтобы выключить музыку ·
+                </textPath>
+              </text>
+            </svg>
+            <span class="music__btn"><i></i></span>
+          </button>
+        </div>
+
+        <div class="date-grid reveal">
+          <span>Ислам и Наргиз</span> <br>  
+          <span>13.11.2026</span><br>  
+          <span>17:00</span>
+        </div>
+
+        <p class="intro__text reveal" data-d="1">
+          Дорогие родные и друзья! Один день в этом году будет для нас особенным,
+          и мы хотим провести его в кругу близких. С большим удовольствием приглашаем вас
+          на наш самый главный праздник — нашу свадьбу!
+        </p>
+
+        <!-- Календарь. Не входит в исходный шаблон — удалите блок, если не нужен. -->
+        <div class="cal reveal" id="cal" data-d="2">
+          <div class="cal__top">
+            <span class="cal__m">Ноябрь</span>
+            <span class="cal__y">2026</span>
+          </div>
+          <div class="cal__grid" id="calGrid" role="grid" aria-label="Ноябрь 2026"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- локация -->
+    <section class="sheet sheet--a">
+      <div class="wrap">
+        <h2 class="deco-h reveal">Локация</h2>
+        <p class="venue__name reveal" data-d="1">Житикара</p>
+        <p class="venue__addr reveal" data-d="1">
+          <a href="https://yandex.kz/profile/225684982540?lang=ru" target="_blank" rel="noopener">
+            микрорайон Кенсай, 2
+          </a>
+        </p>
+        <p class="venue__addr reveal" data-d="2" style="margin-top: 5px;">Ресторан «Жемчужина»</p>
+        <p class="venue__addr reveal" data-d="2" style="margin-top: 5px;">17:00</p>
+
+        <!-- Фото места. Положите venue.jpg рядом с index.html — иначе блок скроется. -->
+        <img class="venue__photo reveal" data-d="2" src="venue.jpg" alt="" loading="lazy" onerror="this.remove()">
+      </div>
+    </section>
+
+    <!-- анкета -->
+    <section class="sheet sheet--b" id="rsvp">
+      <div class="wrap">
+        <h2 class="deco-h reveal">Анкета</h2>
+
+        <div id="formWrap" class="reveal" data-d="1">
+          <p class="form__note">Пожалуйста, заполните анкету до 1 ноября 2026 г.</p>
+          <p class="form__note">Ответьте на несколько вопросов, чтобы помочь нам организовать свадьбу.</p>
+
+          <fieldset class="fs">
+            <legend>Сможете ли вы присутствовать?</legend>
+            <label class="opt">
+              <input type="radio" name="answer" value="Обязательно приду">
+              <span>Обязательно приду</span>
+            </label>
+            <label class="opt">
+              <input type="radio" name="answer" value="Не знаю">
+              <span>Не знаю</span>
+            </label>
+            <label class="opt">
+              <input type="radio" name="answer" value="Не смогу">
+              <span>Не смогу, к сожалению</span>
+            </label>
+            <p class="err" id="errAnswer">Выберите один из вариантов.</p>
+          </fieldset>
+
+          <div class="fld">
+            <label for="guestName">Введите имя</label>
+            <input class="inp" id="guestName" type="text" autocomplete="name" placeholder="Имя и фамилия">
+            <p class="err" id="errName">Напишите имя — иначе мы не поймём, кого ждать.</p>
+          </div>
+
+          <button class="send" type="button" id="sendBtn">Отправить</button>
+          <p class="err" id="errSend" style="text-align:center">Не удалось отправить. Проверьте связь и попробуйте ещё
+            раз.</p>
+        </div>
+
+        <div class="done hide" id="doneBox">
+          <h3>Спасибо, ответ получили</h3>
+          <p id="doneLine"></p>
+          <p>Если планы поменяются — просто откройте эту страницу снова.</p>
+          <button class="again" type="button" id="againBtn">Изменить ответ</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- отсчёт -->
+    <section class="count">
+      <img class="count__bg" id="countBg" src="hero.webp" alt="" loading="lazy">
+      <div class="wrap">
+        <h2 class="reveal">До свадьбы<br>осталось:</h2>
+        <div class="count__row reveal" data-d="1">
+          <div><b id="cdD">—</b><span>дней</span></div>
+          <div><b id="cdH">—</b><span>часов</span></div>
+          <div><b id="cdM">—</b><span>минут</span></div>
+          <div><b id="cdS">—</b><span>секунд</span></div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- контакты -->
+    <section class="plain">
+      <div class="wrap">
+        <h2 class="deco-h reveal">Контакты</h2>
+        <p class="reveal" data-d="1">
+          По всем организационным вопросам в день праздника обращаться:
+        </p>
+        <p class="contacts__val reveal" data-d="2"><a href="tel:+7 707 315 6745">+7 707 315 6745</a></p>
+      </div>
+    </section>
+
+    <footer class="final">
+      <p class="reveal">Будем вас ждать!</p>
+    </footer>
+
+  </main>
+
+  <script>
+    /* ══════════════════════════════════════════
+       КОНФИГ
+       ══════════════════════════════════════════ */
+    const WEDDING = new Date(2026, 10, 13, 0, 0, 0);   // 13.11.2026
+    const RSVP_URL = '/api/rsvp';                        // '' = демо-режим, требует rsvp-server.js
+    const CSRF = document.querySelector('meta[name="csrf-token"]')?.content || '';
+    const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* ══════════════════════════════════════════
+       АВТОЗАПУСК МУЗЫКИ — через 0.5 с после открытия
+       ══════════════════════════════════════════ */
+    const MUSIC = (function () {
+      const DELAY = 500;                      // через сколько мс включать звук
+      const bgm = document.getElementById('bgm');
+      const btn = document.getElementById('music');
+
+      let userPaused = false;                 // гость сам нажал «пауза» — не мешаем
+      let sounding = false;                   // звук реально идёт
+
+      const setIcon = on => {
+        btn.classList.toggle('is-paused', !on);
+        btn.setAttribute('aria-label', on ? 'Выключить музыку' : 'Включить музыку');
+      };
+
+      /* 1 · стартуем БЕЗ звука — беззвучный автоплей браузеры разрешают всегда,
+            поэтому трек уже крутится к моменту, когда мы снимаем mute */
+      bgm.muted = true;
+      bgm.volume = 0;
+      const kick = () => { const p = bgm.play(); if (p && p.catch) p.catch(() => { }); };
+      kick();
+      bgm.addEventListener('canplay', kick, { once: true });
+
+      /* 2 · через 0.5 с включаем звук с мягким нарастанием громкости */
+      function soundOn() {
+        if (userPaused || sounding) return;
+        bgm.muted = false;
+        const p = bgm.play();
+        if (p && p.catch) p.catch(() => { });
+
+        // проверяем, не оборвал ли браузер воспроизведение при снятии mute
+        setTimeout(() => {
+          if (bgm.paused || bgm.muted) {       // заблокировано — ждём жеста
+            bgm.muted = true;
+            setIcon(false);
+            armGesture();
+          } else {
+            sounding = true;
+            setIcon(true);
+            fade();                            // 0 → 0.5 за ~600 мс
+          }
+        }, 120);
+      }
+
+      function fade() {
+        const step = () => {
+          if (userPaused) return;
+          bgm.volume = Math.min(0.5, +(bgm.volume + 0.025).toFixed(3));
+          if (bgm.volume < 0.5) setTimeout(step, 30);
+        };
+        step();
+      }
+
+      /* 3 · запасной путь: первое любое действие гостя включает звук */
+      let armed = false;
+      function armGesture() {
+        if (armed) return;
+        armed = true;
+        const evs = ['pointerdown', 'touchstart', 'touchend', 'click', 'keydown', 'wheel', 'scroll'];
+        const go = () => {
+          evs.forEach(ev => document.removeEventListener(ev, go, true));
+          armed = false;
+          soundOn();
+        };
+        evs.forEach(ev => document.addEventListener(ev, go, { capture: true, passive: true }));
+      }
+
+      armGesture();                            // жест сработает и раньше 0.5 с
+      setTimeout(soundOn, DELAY);
+
+      /* 4 · ручное переключение по кнопке */
+      btn.addEventListener('click', () => {
+        if (bgm.paused || bgm.muted) {
+          userPaused = false;
+          bgm.muted = false;
+          bgm.volume = 0.5;
+          bgm.play().catch(() => { });
+          sounding = true;
+          setIcon(true);
+        } else {
+          userPaused = true;
+          sounding = false;
+          bgm.pause();
+          setIcon(false);
+        }
+      });
+
+      return { soundOn };
+    })();
+
+    /* кнопка музыки становится sticky (правый верхний угол), когда скролл уходит ниже её места */
+    (function () {
+      const slot = document.querySelector('.music-slot');
+      const btn = document.getElementById('music');
+      if (!slot || !btn) return;
+      const io = new IntersectionObserver(([entry]) => {
+        const stuck = !entry.isIntersecting && entry.boundingClientRect.top < 0;
+        btn.classList.toggle('is-sticky', stuck);
+      }, { threshold: 0 });
+      io.observe(slot);
+    })();
+
+    /* ══════════════════════════════════════════
+       ПАРАЛЛАКС + ПОЯВЛЕНИЕ
+       ══════════════════════════════════════════ */
+    (function () {
+      if (!REDUCED) {
+        const layers = [document.getElementById('heroImg'), document.getElementById('countBg')].filter(Boolean);
+        let queued = false;
+        function paint() {
+          const vh = innerHeight;
+          for (const el of layers) {
+            const r = el.parentElement.getBoundingClientRect();
+            if (r.bottom < -200 || r.top > vh + 200) continue;
+            const off = (r.top + r.height / 2 - vh / 2) * 0.16;
+            el.style.transform = 'translate3d(0,' + (-off).toFixed(1) + 'px,0)';
+          }
+          queued = false;
+        }
+        addEventListener('scroll', () => { if (!queued) { queued = true; requestAnimationFrame(paint); } }, { passive: true });
+        addEventListener('resize', paint);
+        paint();
+      }
+
+      const io = new IntersectionObserver((es, o) => {
+        es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); o.unobserve(e.target); } });
+      }, { threshold: .2, rootMargin: '0px 0px -6% 0px' });
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    })();
+
+    /* ══════════════════════════════════════════
+       КАЛЕНДАРЬ
+       ══════════════════════════════════════════ */
+    (function () {
+      const grid = document.getElementById('calGrid');
+      if (!grid) return;
+
+      ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'].forEach(d => {
+        const c = document.createElement('div');
+        c.className = 'cal__dow'; c.textContent = d; grid.appendChild(c);
+      });
+
+      const y = WEDDING.getFullYear(), m = WEDDING.getMonth(), day = WEDDING.getDate();
+      const first = (new Date(y, m, 1).getDay() + 6) % 7;
+      const total = new Date(y, m + 1, 0).getDate();
+
+      for (let i = 0; i < first; i++) {
+        const c = document.createElement('div');
+        c.className = 'cal__d cal__d--off'; c.setAttribute('aria-hidden', 'true'); grid.appendChild(c);
+      }
+      for (let d = 1; d <= total; d++) {
+        const col = (first + d - 1) % 7;
+        const c = document.createElement('div');
+        c.className = 'cal__d' + (col > 4 ? ' cal__d--rest' : '');
+        c.textContent = d;
+        if (d === day) {
+          c.classList.add('cal__d--w');
+          c.setAttribute('aria-label', '13 ноября — день свадьбы');
+          c.insertAdjacentHTML('afterbegin',
+            '<svg class="cal__ring2" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21"/></svg>');
+        }
+        grid.appendChild(c);
+      }
+    })();
+
+    /* ══════════════════════════════════════════
+       ОТСЧЁТ
+       ══════════════════════════════════════════ */
+    (function () {
+      const D = cdD, H = cdH, M = cdM, S = cdS;
+      const pad = n => String(n).padStart(2, '0');
+      function tick() {
+        const diff = WEDDING - Date.now();
+        if (diff <= 0) { D.textContent = H.textContent = M.textContent = S.textContent = '00'; return; }
+        const s = Math.floor(diff / 1000);
+        D.textContent = Math.floor(s / 86400);
+        H.textContent = pad(Math.floor(s / 3600) % 24);
+        M.textContent = pad(Math.floor(s / 60) % 60);
+        S.textContent = pad(s % 60);
+      }
+      tick(); setInterval(tick, 1000);
+    })();
+
+    /* ══════════════════════════════════════════
+       АНКЕТА
+       ══════════════════════════════════════════ */
+    (function () {
+      const wrap = document.getElementById('formWrap');
+      const done = document.getElementById('doneBox');
+      const line = document.getElementById('doneLine');
+      const name = document.getElementById('guestName');
+      const btn = document.getElementById('sendBtn');
+
+      const err = {
+        answer: document.getElementById('errAnswer'),
+        name: document.getElementById('errName'),
+        send: document.getElementById('errSend')
+      };
+      const clear = () => Object.values(err).forEach(e => e.classList.remove('on'));
+      const pick = n => document.querySelector('input[name="' + n + '"]:checked');
+
+      document.querySelectorAll('input[name="answer"]').forEach(r => {
+        r.addEventListener('change', () => err.answer.classList.remove('on'));
+      });
+      name.addEventListener('input', () => err.name.classList.remove('on'));
+
+      btn.addEventListener('click', async () => {
+        clear();
+        const a = pick('answer');
+        const n = name.value.trim();
+
+        let bad = false;
+        if (!a) { err.answer.classList.add('on'); bad = true; }
+        if (!n) { err.name.classList.add('on'); bad = true; }
+        if (bad) { document.querySelector('.err.on').scrollIntoView({ block: 'center', behavior: 'smooth' }); return; }
+
+        const payload = { name: n, answer: a.value };
+
+        btn.disabled = true; btn.textContent = 'Отправляем…';
+        try {
+          if (RSVP_URL) {
+            const res = await fetch(RSVP_URL, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'X-CSRF-TOKEN': CSRF },
+              body: JSON.stringify(payload)
+            });
+            if (!res.ok) throw new Error(res.status);
+          }
+          wrap.classList.add('hide');
+          done.classList.remove('hide');
+          line.textContent = payload.name + ' — ' + payload.answer.toLowerCase() + '.';
+        } catch (e) {
+          err.send.classList.add('on');
+        } finally {
+          btn.disabled = false; btn.textContent = 'Отправить';
+        }
+      });
+
+      document.getElementById('againBtn').addEventListener('click', () => {
+        done.classList.add('hide');
+        wrap.classList.remove('hide');
+      });
+    })();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Анкета — ответы гостей</title>
+<style>
+  :root{
+    --bordo:#6b1f2a;
+    --cream:#f7efe3;
+    --ink:#2b2320;
+    --line:#e4d9c8;
+    --ok:#3f7a4d;
+    --warn:#a97a1e;
+    --bad:#a13a3a;
+  }
+  *{ box-sizing:border-box; }
+  body{
+    margin:0;
+    font-family:"Manrope","Segoe UI",sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    padding:clamp(1rem,4vw,3rem);
+  }
+  h1{
+    font-family:Georgia,serif;
+    font-size:clamp(1.4rem,4vw,2rem);
+    margin:0 0 .3rem;
+  }
+  .sub{
+    color:#6b5f54;
+    margin:0 0 1.5rem;
+    font-size:.95rem;
+  }
+  .toolbar{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.6rem;
+    align-items:center;
+    margin-bottom:1.2rem;
+  }
+  .toolbar input[type="search"]{
+    flex:1 1 220px;
+    padding:.55rem .8rem;
+    border:1px solid var(--line);
+    border-radius:6px;
+    font-size:.95rem;
+    background:#fff;
+  }
+  button{
+    font:inherit;
+    cursor:pointer;
+    border:1px solid var(--bordo);
+    background:var(--bordo);
+    color:#fff;
+    padding:.55rem 1rem;
+    border-radius:6px;
+  }
+  button.ghost{
+    background:transparent;
+    color:var(--bordo);
+  }
+  .stats{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.6rem;
+    margin-bottom:1.2rem;
+  }
+  .stat{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:.6rem 1rem;
+    font-size:.9rem;
+    min-width:120px;
+  }
+  .stat b{ display:block; font-size:1.3rem; }
+  .table-wrap{
+    overflow-x:auto;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:10px;
+  }
+  table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:.92rem;
+    min-width:640px;
+  }
+  th, td{
+    text-align:left;
+    padding:.7rem .9rem;
+    border-bottom:1px solid var(--line);
+    white-space:nowrap;
+  }
+  th{
+    background:#f1e6d6;
+    position:sticky;
+    top:0;
+    cursor:pointer;
+    user-select:none;
+  }
+  tbody tr:hover{ background:#fbf6ec; }
+  .badge{
+    display:inline-block;
+    padding:.15rem .55rem;
+    border-radius:99px;
+    font-size:.8rem;
+    color:#fff;
+  }
+  .badge--yes{ background:var(--ok); }
+  .badge--maybe{ background:var(--warn); }
+  .badge--no{ background:var(--bad); }
+  .empty, .error{
+    padding:2rem;
+    text-align:center;
+    color:#8a7c6d;
+  }
+  .error{ color:var(--bad); }
+  .del{
+    border:none;
+    background:none;
+    color:var(--bad);
+    padding:.2rem .5rem;
+    font-size:.85rem;
+  }
+</style>
+</head>
+<body>
+
+  <h1>Анкета — ответы гостей</h1>
+
+  <div class="stats" id="stats"></div>
+
+  <div class="toolbar">
+    <input type="search" id="search" placeholder="Поиск по имени…">
+    <button id="refreshBtn" class="ghost" type="button">Обновить</button>
+    <button id="csvBtn" type="button">Скачать CSV (Excel)</button>
+  </div>
+
+  <div class="table-wrap">
+    <table id="tbl">
+      <thead>
+        <tr>
+          <th data-key="createdAt">Когда</th>
+          <th data-key="name">Имя</th>
+          <th data-key="answer">Придёт?</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+  <div class="empty" id="emptyMsg" style="display:none">Пока никто не ответил.</div>
+  <div class="error" id="errorMsg" style="display:none"></div>
+
+<script>
+  const API = '/api/rsvp';
+  let data = [];
+  let sortKey = 'createdAt';
+  let sortDir = -1;
+
+  const rowsEl = document.getElementById('rows');
+  const emptyEl = document.getElementById('emptyMsg');
+  const errorEl = document.getElementById('errorMsg');
+  const statsEl = document.getElementById('stats');
+  const searchEl = document.getElementById('search');
+
+  function badge(answer){
+    const a = (answer || '').toLowerCase();
+    if (a.includes('обязательно')) return '<span class="badge badge--yes">' + escapeHtml(answer) + '</span>';
+    if (a.includes('не смогу'))    return '<span class="badge badge--no">' + escapeHtml(answer) + '</span>';
+    return '<span class="badge badge--maybe">' + escapeHtml(answer) + '</span>';
+  }
+
+  function escapeHtml(s){
+    return String(s ?? '').replace(/[&<>"']/g, c => ({
+      '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'
+    }[c]));
+  }
+
+  function formatDate(iso){
+    try {
+      return new Date(iso).toLocaleString('ru-RU', {
+        day:'2-digit', month:'2-digit', year:'numeric', hour:'2-digit', minute:'2-digit'
+      });
+    } catch { return iso || ''; }
+  }
+
+  function render(){
+    const q = searchEl.value.trim().toLowerCase();
+    let list = data.filter(r => !q || (r.name || '').toLowerCase().includes(q));
+
+    list = list.slice().sort((a, b) => {
+      const av = a[sortKey] || '';
+      const bv = b[sortKey] || '';
+      return av > bv ? sortDir : av < bv ? -sortDir : 0;
+    });
+
+    rowsEl.innerHTML = list.map(r => `
+      <tr data-id="${escapeHtml(r.id)}">
+        <td>${escapeHtml(formatDate(r.createdAt))}</td>
+        <td>${escapeHtml(r.name)}</td>
+        <td>${badge(r.answer)}</td>
+        <td><button class="del" data-id="${escapeHtml(r.id)}" type="button">удалить</button></td>
+      </tr>
+    `).join('');
+
+    emptyEl.style.display = list.length ? 'none' : 'block';
+
+    const total = data.length;
+    const yes = data.filter(r => (r.answer || '').toLowerCase().includes('обязательно')).length;
+    const no = data.filter(r => (r.answer || '').toLowerCase().includes('не смогу')).length;
+    const maybe = total - yes - no;
+    const withPair = data.filter(r => (r.company || '').toLowerCase().includes('с парой')).length;
+
+    statsEl.innerHTML = `
+      <div class="stat"><b>${total}</b>всего ответов</div>
+      <div class="stat"><b>${yes}</b>придут</div>
+      <div class="stat"><b>${maybe}</b>не знают</div>
+      <div class="stat"><b>${no}</b>не смогут</div>
+    `;
+  }
+
+  async function load(){
+    try {
+      const res = await fetch(API, { cache:'no-store' });
+      if (!res.ok) throw new Error(res.status);
+      data = await res.json();
+      errorEl.style.display = 'none';
+      render();
+    } catch (e) {
+      errorEl.style.display = 'block';
+      errorEl.textContent = 'Не удалось получить данные с сервера. Запущен ли rsvp-server.js?';
+    }
+  }
+
+  async function del(id){
+    if (!confirm('Удалить этот ответ?')) return;
+    await fetch(API + '?id=' + encodeURIComponent(id), { method:'DELETE' });
+    load();
+  }
+
+  function toCsv(){
+    const header = ['Когда', 'Имя', 'Ответ', 'С парой'];
+    const lines = [header.join(';')].concat(data.map(r => [
+      formatDate(r.createdAt), r.name, r.answer, r.company || ''
+    ].map(v => '"' + String(v).replace(/"/g, '""') + '"').join(';')));
+    const blob = new Blob(['﻿' + lines.join('\r\n')], { type:'text/csv;charset=utf-8' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'rsvp-' + new Date().toISOString().slice(0,10) + '.csv';
+    a.click();
+  }
+
+  document.querySelectorAll('th[data-key]').forEach(th => {
+    th.addEventListener('click', () => {
+      const key = th.dataset.key;
+      sortDir = (sortKey === key) ? -sortDir : -1;
+      sortKey = key;
+      render();
+    });
+  });
+
+  rowsEl.addEventListener('click', e => {
+    const btn = e.target.closest('.del');
+    if (btn) del(btn.dataset.id);
+  });
+
+  searchEl.addEventListener('input', render);
+  document.getElementById('refreshBtn').addEventListener('click', load);
+  document.getElementById('csvBtn').addEventListener('click', toCsv);
+
+  load();
+  setInterval(load, 10000);
+</script>
+</body>
+</html>
